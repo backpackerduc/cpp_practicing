@@ -8,9 +8,11 @@ class Test
 {
 public:
   Test() = default;
-  Test(A a) : b(a) {}
+  Test(const A& a) : b(a) {}
 
-  void doStuff(A a) {}
+  void doStuff(const A& a) {
+    b = a;
+  }
 
 private:
   B b;
