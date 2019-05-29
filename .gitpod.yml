@@ -1,5 +1,5 @@
 image:
   file: docker_images/gitpod_init/dockerfile
-  
-workspaceLocation: $USER/workspace/practise_coding
-checkoutLocation:  $USER/workspace/practise_coding/src
+
+checkoutLocation:  "practise_coding/src"
+workspaceLocation: "practise_coding"
