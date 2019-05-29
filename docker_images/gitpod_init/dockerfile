@@ -10,12 +10,13 @@ RUN apt-get update && apt-get install -y \
 RUN wget https://github.com/sharkdp/bat/releases/download/v0.11.0/bat_0.11.0_amd64.deb
 RUN dpkg -i bat_0.11.0_amd64.deb
 
-RUN sudo pip3 install numpy
-RUN sudo pip3 install sympy
-RUN sudo pip3 install matplotlib
-
 USER gitpod
-RUN echo "source $USER/workspace" >> ~/.bashrc
+RUN echo "source \$HOME/workspace/practise_coding/src/bash_configs/bashrc_standard.sh" >> ~/.bashrc
+RUN echo "git config --include include.path '\$HOME/workspace/practise_coding/src/git_configs/gitconfig_standard'" >> ~/.bashrc
+
+RUN pip3 install numpy
+RUN pip3 install sympy
+RUN pip3 install matplotlib
 
 # Give back control
 USER root
