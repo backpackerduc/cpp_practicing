@@ -1,3 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
-source bash_aliases.sh
+BASEDIR=$(dirname "$0")
+source $BASEDIR/bash_aliases.sh

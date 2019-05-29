@@ -11,8 +11,8 @@ RUN wget https://github.com/sharkdp/bat/releases/download/v0.11.0/bat_0.11.0_amd
 RUN dpkg -i bat_0.11.0_amd64.deb
 
 USER gitpod
-RUN echo "source /workspace/practise_coding/src/bash_configs/bashrc_standard.sh" >> ~/.bashrc
-RUN echo "git config --include include.path '/workspace/practise_coding/src/git_configs/gitconfig_standard'" >> ~/.bashrc
+RUN echo "/workspace/practise_coding/src/bash_configs/bashrc_standard.sh" >> ~/.bashrc
+RUN echo "git config --include --global include.path '/workspace/practise_coding/src/git_configs/gitconfig_standard'" >> ~/.bashrc
 
 RUN pip3 install numpy
 RUN pip3 install sympy
