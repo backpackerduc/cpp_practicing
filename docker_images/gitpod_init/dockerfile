@@ -15,7 +15,7 @@ RUN sudo pip3 install sympy
 RUN sudo pip3 install matplotlib
 
 USER gitpod
-# Apply user-specific settings
+RUN echo "source $USER/workspace" >> ~/.bashrc
 
 # Give back control
 USER root
