@@ -1,18 +1,20 @@
 FROM gitpod/workspace-full:latest
 
 USER root
-# Install custom tools, runtime, etc.
-# RUN apt upgrade
+# Installing Tools
+# - silversearcher-ag
 RUN apt-get update && apt-get install -y \
   silversearcher-ag \
   && apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
-
+# - bat
 RUN wget https://github.com/sharkdp/bat/releases/download/v0.11.0/bat_0.11.0_amd64.deb
 RUN dpkg -i bat_0.11.0_amd64.deb
 
 USER gitpod
-RUN echo "/workspace/practise_coding/src/bash_configs/bashrc_standard.sh" >> ~/.bashrc
-RUN echo "git config --include --global include.path '/workspace/practise_coding/src/git_configs/gitconfig_standard'" >> ~/.bashrc
+ENV WORKSPACE /workspace/practise_coding
+RUN echo "WORKSPACE_ROOT=$WORKSPACE" >> ~/.bashrc
+RUN echo "cd \$WORKSPACE_ROOT/src/bash_configs; source bashrc_standard.sh; cd -" >> ~/.bashrc
+RUN git config --include --global include.path $WORKSPACE/src/git_configs/gitconfig_standard
 
 RUN pip3 install numpy
 RUN pip3 install sympy
