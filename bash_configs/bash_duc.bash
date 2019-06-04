@@ -53,28 +53,14 @@ alias cb='catkin build'
 alias cbsc='catkin build -sc'
 alias cbn='catkin build --no-deps'
 alias ccy='catkin clean -y'
-alias cbdevel='catkin build mops_development'
 alias crt='catkin run_tests'
 alias crtn='catkin run_tests --no-deps'
-alias cda='cd ~/workspace/athena'
-alias cdf='cd ~/workspace/athena/src/fusion'
-alias cds='cd ~/workspace/athena/src/'
-alias cddevm='cd ~/workspace/athena/devel/lib/mops'
-alias sclangbuild='source $HOME/workspace/athena/devel/setup.bash'
 
 # Overwrite specific path executables
 #alias clang-format='/usr/bin/clang-format-3.9'
 
 # Core Dumps
 ulimit -c unlimited
-
-# Running Apps
-alias plattfusgrid='rosbag play --clock --pause /fusion/FusionDynamicWorldService/0/DynamicWorld:=/rec/fusion/FusionDynamicWorldService/0/DynamicWorld \
-/fusion/FusionTrafficLightService/0/FusionTrafficLightInterface:=/rec/fusion/FusionTrafficLightService/0/FusionTrafficLightInterface'
-
-alias plattfus='plattfusgrid \
-/fusion/FusionDynamicWorldService/internal_grid_fusion/DynamicWorld:=/rec/fusion/FusionDynamicWorldService/internal_grid_fusion/DynamicWorld \
-/fusion/FusionStaticWorldService/internal_grid_fusion/StaticWorld:=/rec/fusion/FusionStaticWorldService/internal_grid_fusion/StaticWorld '
 
 # History management
 export HISTFILE=$HOME/personal/bash_config/bash_history
